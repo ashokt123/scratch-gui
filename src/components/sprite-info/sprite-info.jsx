@@ -84,7 +84,7 @@ class SpriteInfo extends React.Component {
                 )}
                 disabled={this.props.disabled}
                 placeholder={this.props.intl.formatMessage(messages.spritePlaceholder)}
-                tabIndex="0"
+                tabIndex="1"
                 type="text"
                 value={this.props.disabled ? '' : this.props.name}
                 onSubmit={this.props.onChangeName}
@@ -109,7 +109,7 @@ class SpriteInfo extends React.Component {
                         small
                         disabled={this.props.disabled}
                         placeholder="x"
-                        tabIndex="0"
+                        tabIndex="1"
                         type="text"
                         value={this.props.disabled ? '' : Math.round(this.props.x)}
                         onSubmit={this.props.onChangeX}
@@ -124,7 +124,7 @@ class SpriteInfo extends React.Component {
                     (stageSize === STAGE_DISPLAY_SIZES.large) ?
                         <div className={styles.iconWrapper}>
                             <img
-                                aria-hidden="true"
+                                aria-hidden="false"
                                 className={classNames(styles.yIcon, styles.icon)}
                                 src={yIcon}
                             />
@@ -196,13 +196,16 @@ class SpriteInfo extends React.Component {
                                         [styles.isDisabled]: this.props.disabled
                                     }
                                 )}
-                                tabIndex="0"
+                                tabIndex="1"
                                 onClick={this.props.onClickVisible}
                                 onKeyPress={this.props.onPressVisible}
                             >
                                 <img
-                                    className={styles.icon}
                                     src={showIcon}
+                                    className={classNames(styles.icon, {
+                                        [styles.isDisabled]: this.props.disabled,
+                                        [styles.isActive]: this.props.visible && !this.props.disabled
+                                    })}
                                 />
                             </div>
                             <div
@@ -215,13 +218,16 @@ class SpriteInfo extends React.Component {
                                         [styles.isDisabled]: this.props.disabled
                                     }
                                 )}
-                                tabIndex="0"
+                                tabIndex="1"
                                 onClick={this.props.onClickNotVisible}
                                 onKeyPress={this.props.onPressNotVisible}
                             >
                                 <img
-                                    className={styles.icon}
                                     src={hideIcon}
+                                    className={classNames(styles.icon, {
+                                        [styles.isDisabled]: this.props.disabled,
+                                        [styles.isActive]: this.props.visible && !this.props.disabled
+                                    })}
                                 />
                             </div>
                         </div>
@@ -236,7 +242,7 @@ class SpriteInfo extends React.Component {
                                 small
                                 disabled={this.props.disabled}
                                 label={sizeLabel}
-                                tabIndex="0"
+                                tabIndex="1"
                                 type="text"
                                 value={this.props.disabled ? '' : Math.round(this.props.size)}
                                 onSubmit={this.props.onChangeSize}
@@ -245,12 +251,12 @@ class SpriteInfo extends React.Component {
                     </div>
                     <div className={classNames(styles.group, styles.largerInput)}>
                         <DirectionPicker
+                            onChangeDirection={this.props.onChangeDirection}
+                            onChangeRotationStyle={this.props.onChangeRotationStyle}
                             direction={Math.round(this.props.direction)}
                             disabled={this.props.disabled}
                             labelAbove={labelAbove}
                             rotationStyle={this.props.rotationStyle}
-                            onChangeDirection={this.props.onChangeDirection}
-                            onChangeRotationStyle={this.props.onChangeRotationStyle}
                         />
                     </div>
                 </div>
