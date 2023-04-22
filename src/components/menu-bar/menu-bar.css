@@ -24,6 +24,7 @@
         but fixes [FFx + Safari] [resize window down + scroll to the right] bug.
         width: 100%;
     */
+    width: 100%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: $menu-bar-standard-font-size;
     font-weight: bold;
@@ -173,7 +174,7 @@
 }
 
 .account-nav-menu, .mystuff-button {
-    padding: 0 .25rem;
+    padding: 0 .35rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -206,15 +207,15 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 45%;
-  padding-right: 10px;
-  padding-left: 10px;
-  width: 30px;
+  padding-right: 24px;
+  padding-left: 24px;
+  width: 40px;
   overflow: hidden;
-  text-indent: 50px;
-  white-space: nowrap;
+  text-indent: 80px;
+  white-space: pre-wrap;
 }
 .mystuff > a:hover {
-  background-size: 50%;
+  background-size: 55%;
 }
 
 .mystuff > a {
@@ -222,7 +223,7 @@
 }
 
 .about-icon {
-    height: 1.25rem;
-    margin: 0.5rem;
+    height: 1.65rem;
+    margin: 0.8rem;
     vertical-align: middle;
 }

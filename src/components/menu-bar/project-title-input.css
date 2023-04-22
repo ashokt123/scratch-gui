@@ -22,18 +22,18 @@ can set a width for example or what it should do in a flex box (eg. grow).
 .title-field {
     color: $ui-white;
     font-weight: bold;
-    font-size: .8rem;
+    font-size: .5rem;
 }
 
 .title-field::placeholder {
     color: $ui-white;
     font-weight: normal;
-    font-size: .8rem;
+    font-size: .5rem;
     font-style: italic;
 }
 
 .title-field:hover {
-    background-color: hsla(0, 100%, 100%, 0.5);
+    background-color: hsla(0, 105%, 105%, 0.5);
 }
 
 .title-field:focus {
